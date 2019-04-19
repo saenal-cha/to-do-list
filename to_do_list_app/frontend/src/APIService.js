@@ -12,7 +12,7 @@ export class APIService {
         return axios.get(url).then(response => response.data);
     }
     deleteTodo(todo) {
-        const url = `${API_URL}/api/todos/${todo.pk}`;
+        const url = `${API_URL}/api/todos/${todo._id}`;
         return axios.delete(url);
     }
     createTodo(todo) {

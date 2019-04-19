@@ -76,7 +76,7 @@ router.route('/todos/:id').put((req, res) => {
     });
 });
 
-router.route('/todos/:id').get((req, res) => {
+router.route('/todos/:id').delete((req, res) => {
     Todo.findByIdAndRemove({_id: req.params.id}, (err, todo) => {
         if(err) res.json(err);
         else res.json('Todo successfully removed');
