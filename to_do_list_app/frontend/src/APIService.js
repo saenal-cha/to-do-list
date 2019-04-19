@@ -19,8 +19,10 @@ export class APIService {
         const url = `${API_URL}/api/create/`;
         return axios.post(url, todo);
     }
-    updateTodo(todo) {
-        const url = `${API_URL}/api/todos/${todo.pk}`;
+    updateTodo(todo, newName) {
+        const url = `${API_URL}/api/todos/${todo._id}`;
+        console.log('apiService.js: ' + newName);
+        todo.newName = 'test';
         return axios.put(url, todo);
     }
 }

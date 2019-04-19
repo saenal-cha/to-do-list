@@ -38,7 +38,7 @@ app.use('/api', router);
 router.route('/create').post((req, res) => {
     var todo = new Todo(req.body);
     todo.save().then( todo => {
-        res.status(200).json({'message': 'Todo successfully added '});
+        res.status(201).json({'message': 'Todo successfully added '});
     }).catch( err => {
         res.status(400).send("Error when saving to database");
     });
@@ -66,10 +66,10 @@ router.route('/todos/:id').put((req, res) => {
         if(!todo)
             return next(new Error('Error getting the todo!'));
         else {
-            todo.name = req.body.name;
+            console.log(todo);
             todo.save().then( todo => {
                 res.json('Todo updated successfully');
-            }).catch(err => {
+            }).catch( err => {
                 res.statsu(400).send("Error when updating the todo");
             });
         }

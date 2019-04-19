@@ -1,33 +1,41 @@
 <template>
-    <div>
-        <h1>Todos ()</h1>
-        <table class="table table-bordered table-hover">
+    <div class="mx-5 mt-5">
+        <table class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Action</th>
+                    <th>할 일</th>
+                    <th></th>
+                    <th class="w-25"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr
-                    v-for="todo in todos"
+                    v-for="(todo, index) in todos"
                 >
-                    <th></th>
-                    <td v-html="todo.name"></td>
+                    <th v-html="index + 1"></th>
+                    <td v-html="todo.name">
+                    </td>
+                    <td>
+                        <input
+                            class="form-control"
+                            type="text"
+                            v-model="newName"
+                        />
+                    </td>
                     <td>
                         <button
-                            class="btn btn-danger"
+                            class="btn btn-danger mx-3"
                             @click="deleteTodo(todo)"
                         >
-                            X
+                            삭제하기
                         </button>
-                        <a
+                        <button
                             class="btn btn-primary"
-                            :href="'/todo-update/' + todo.id"
+                            @click="updateTodo(todo)"
                         >
                             &#9998;
-                        </a>
+                        </button>
                     </td>
                 </tr>
             </tbody>
@@ -47,7 +55,8 @@ export default {
     data() {
         return {
             todos: [],
-            numberOfTodos: 0
+            numberOfTodos: 0,
+            newName: ''
         };
     },
     methods: {
@@ -59,10 +68,18 @@ export default {
             });
         },
         deleteTodo(todo) {
-            apiService.deleteTodo(todo).then((r) => {
-                if(r.status === 204) {
-                    alert("Todo Deleted");
+            apiService.deleteTodo(todo).then((response) => {
+                if(response.status === 200) {
+                    alert("할 일 목록에서 삭제되었습니다");
+
                     this.$router.go();
+                }
+            });
+        },
+        updateTodo(todo) {
+            apiService.updateTodo(todo, this.newName).then((response) => {
+                if (response.status === 200) {
+                    alert("할 일을 수정했습니다");
                 }
             });
         }
