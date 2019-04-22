@@ -1,6 +1,7 @@
 import axios from 'axios';
+import conf from '@/conf/application.conf.json'
 
-const API_URL = 'http://localhost:4000';
+const API_URL = conf.api.url;
 
 export class APIService {
     getTodos() {

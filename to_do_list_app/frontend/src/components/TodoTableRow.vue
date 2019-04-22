@@ -1,38 +1,39 @@
 <template>
     <tr>
-        <th v-html="this.index + 1"></th>
+        <td class="text-sm-left">{{ this.index + 1 }}</td>
         <td
             @click="onClickTodoName"
-            style="cursor: pointer;"
-            class="text-left"
+            class="text-sm-left cursor-pointer"
         >
-            <input
-                class="form-control"
-                type="text"
+            <v-text-field
+                class=""
                 v-model="newName"
                 v-if="isChangingName === true"
-            />
+                required>
+            </v-text-field>
             <span
-                v-html="this.todo.name"
                 v-else
-            ></span>
+                class="subheading"
+            >{{ this.todo.name }}</span>
         </td>
         <td
-            class="text-right"
+            class="text-sm-right"
         >
-            <button
-                    class="btn btn-primary"
-                    @click="onClickUpdateTodo"
-                    v-if="isChangingName === true"
+            <v-btn
+                color="primary"
+                class=""
+                @click="onClickUpdateTodo"
+                v-if="isChangingName === true"
             >
                 수정하기
-            </button>
-            <button
-                class="btn btn-danger mx-3"
+            </v-btn>
+            <v-btn
+                color="error"
+                class="mx-3"
                 @click="onClickDeleteTodo"
             >
                 삭제하기
-            </button>
+            </v-btn>
         </td>
     </tr>
 </template>
@@ -49,15 +50,14 @@
             return {
                 newName: this.todo.name,
                 isChangingName: false,
-
             };
         },
         methods: {
             onClickDeleteTodo() {
-                this.$parent.deleteTodo(this.todo);
+                this.$emit('click-delete-todo', this.todo);
             },
             onClickUpdateTodo() {
-                this.$parent.updateTodo(this.todo, this.newName);
+                this.$emit('click-update-todo', this.todo, this.newName);
             },
             onClickTodoName() {
                 this.isChangingName = true;

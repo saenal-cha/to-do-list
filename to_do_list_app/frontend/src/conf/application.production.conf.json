@@ -1,0 +1,6 @@
+{
+  "env": "prod",
+  "api": {
+    "url": "http://todo-api.dev.yanolja.in"
+  }
+}
