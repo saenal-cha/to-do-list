@@ -66,7 +66,7 @@ router.route('/todos/:id').put((req, res) => {
         if(!todo)
             return next(new Error('Error getting the todo!'));
         else {
-            console.log(todo);
+            todo.name = req.body.newName;
             todo.save().then( todo => {
                 res.json('Todo updated successfully');
             }).catch( err => {

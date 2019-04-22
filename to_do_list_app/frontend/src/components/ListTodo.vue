@@ -77,6 +77,7 @@ export default {
             });
         },
         updateTodo(todo) {
+            console.log(this.newName);
             apiService.updateTodo(todo, this.newName).then((response) => {
                 if (response.status === 200) {
                     alert("할 일을 수정했습니다");

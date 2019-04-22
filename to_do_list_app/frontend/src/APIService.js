@@ -21,8 +21,8 @@ export class APIService {
     }
     updateTodo(todo, newName) {
         const url = `${API_URL}/api/todos/${todo._id}`;
-        console.log('apiService.js: ' + newName);
-        todo.newName = 'test';
+        todo.newName = newName;
+
         return axios.put(url, todo);
     }
 }
