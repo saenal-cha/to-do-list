@@ -75,10 +75,6 @@ export default {
 </script>
 
 <style scoped>
-    .aform {
-        margin-left: auto;
-        width: 60%;
-    }
 </style>
 
 

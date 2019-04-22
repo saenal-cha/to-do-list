@@ -1,6 +1,5 @@
 <template>
     <v-app>
-        <a></a>
         <div class="mx-5 mt-5">
             <v-data-table
                 class="table table-striped table-hover elevation-1"

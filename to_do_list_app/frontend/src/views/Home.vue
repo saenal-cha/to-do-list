@@ -30,6 +30,7 @@ export default {
         return {
             todos: [],
             showError: false,
+            isUpdateSuccess: false,
         }
     },
     mounted () {
@@ -71,6 +72,9 @@ export default {
                 this.showError = true;
             });
         },
+        refreshTextField() {
+            this.isUpdateSuccess = false;
+        }
     },
     components: {
         CreateTodo,
