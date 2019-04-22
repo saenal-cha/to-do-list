@@ -13,7 +13,7 @@ export default {
     name: 'home',
     components: {
         CreateTodo,
-        ListTodo
+        ListTodo,
     }
 }
 </script>
