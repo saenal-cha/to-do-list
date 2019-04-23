@@ -66,15 +66,13 @@ export default {
                 if (response.status === 200) {
                     alert("할 일을 수정했습니다");
 
-                    this.refreshTextField();
+                    this.getTodos();
+                    this.$store.commit('finishChangeTodo');
                 }
             }, (error) => {
                 this.showError = true;
             });
         },
-        refreshTextField() {
-            this.isUpdateSuccess = false;
-        }
     },
     components: {
         CreateTodo,

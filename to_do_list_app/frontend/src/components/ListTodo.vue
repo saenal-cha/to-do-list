@@ -42,7 +42,6 @@ export default {
         return {
             numberOfTodos: this.todos.length,
             newName: '',
-            isChangingName: false,
         };
     },
     props: {
@@ -52,18 +51,12 @@ export default {
       }
     },
     methods: {
-        onClickTodoName() {
-            this.isChangingName = true;
-        },
         deleteTodo(todo) {
             this.$emit('delete', todo);
         },
         updateTodo(todo, newName) {
             this.$emit('update-todo', todo, newName);
         },
-        refreshTextField() {
-            this.isChangingName = false;
-        }
     },
     mounted() {
     },

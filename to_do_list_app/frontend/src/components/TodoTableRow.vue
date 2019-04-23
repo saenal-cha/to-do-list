@@ -8,6 +8,7 @@
             <v-text-field
                 class=""
                 v-model="newName"
+                :autofocus=true
                 v-if="isChangingName === true"
                 required>
             </v-text-field>
@@ -28,8 +29,17 @@
                 수정하기
             </v-btn>
             <v-btn
+                color="normal"
+                class="mx-3"
+                @click="onClickCancelUpdateTodo"
+                v-if="isChangingName === true"
+            >
+                수정 취소하기
+            </v-btn>
+            <v-btn
                 color="error"
                 class="mx-3"
+                v-if="isChangingName === false"
                 @click="onClickDeleteTodo"
             >
                 삭제하기
@@ -39,6 +49,9 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
+
     export default {
         name: 'TodoTableRow',
         components: {},
@@ -52,12 +65,28 @@
                 isChangingName: false,
             };
         },
+        computed: {
+            ...mapGetters([
+                'stateOfTodoChanging'
+            ])
+        },
+        watch: {
+            stateOfTodoChanging(newValue, oldValue) {
+                if(newValue !== oldValue && newValue === false) {
+                    this.isChangingName = false;
+                }
+            },
+        },
         methods: {
             onClickDeleteTodo() {
                 this.$emit('click-delete-todo', this.todo);
             },
             onClickUpdateTodo() {
                 this.$emit('click-update-todo', this.todo, this.newName);
+            },
+            onClickCancelUpdateTodo() {
+                this.$store.commit('finishChangeTodo');
+                this.newName = this.todo.name;
             },
             onClickTodoName() {
                 if(this.$store.state.isTodoChanging === true) {
