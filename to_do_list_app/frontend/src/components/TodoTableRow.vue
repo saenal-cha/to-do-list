@@ -60,7 +60,12 @@
                 this.$emit('click-update-todo', this.todo, this.newName);
             },
             onClickTodoName() {
+                if(this.$store.state.isTodoChanging === true) {
+                    return
+                }
+
                 this.isChangingName = true;
+                this.$store.commit('changeTodo');
             }
         },
     }
