@@ -1,0 +1,10 @@
+{
+  "name": "text-nuxt",
+  "scripts": {
+    "dev": "nuxt"
+  },
+  "dependencies": {
+    "@nuxtjs/vuetify": "^0.5.5",
+    "nuxt": "^2.6.2"
+  }
+}

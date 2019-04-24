@@ -8,14 +8,11 @@
         >
             오류가 발생했습니다
         </v-alert>
-        <create-todo
-            @create="handleCreateTodo"
-            :refresh-todo="isTodoRefreshed"
-        />
+        <create-todo @create="handleCreateTodo"/>
         <list-todo
-            :todos="todos"
-            @delete="handleDeleteTodo"
-            @update-todo="handleUpdateTodo"
+                :todos="todos"
+                @delete="handleDeleteTodo"
+                @update-todo="handleUpdateTodo"
         />
     </div>
 </template>
@@ -34,7 +31,6 @@ export default {
             todos: [],
             showError: false,
             isUpdateSuccess: false,
-            isTodoRefreshed: false,
         }
     },
     mounted () {
@@ -47,13 +43,9 @@ export default {
             });
         },
         handleCreateTodo (todo) {
-            this.isTodoRefreshed = false;
-
             apiService.createTodo(todo).then((result) => {
                 if(result.status === 201) {
-                    alert("할 일을 추가했습니다");
                     this.getTodos();
-                    this.isTodoRefreshed = true;
                 }
             }, (error) => {
                 this.showError = true;

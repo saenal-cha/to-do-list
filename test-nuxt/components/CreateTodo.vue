@@ -46,18 +46,6 @@ export default {
     name: 'CreateTodo',
     components: {
     },
-    props: [
-        'refreshTodo'
-    ],
-    watch: {
-        refreshTodo: function(newValue, oldValue) {
-            if(newValue !== oldValue && newValue === true) {
-                this.newTodo();
-            }
-        }
-    },
-    computed: {
-    },
     data() {
         return {
             showError: false,
