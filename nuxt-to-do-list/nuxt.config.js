@@ -41,9 +41,14 @@ module.exports = {
         '~/api/index.js'
     ],
     modules: [
-        '@nuxtjs/vuetify'
+        ['@nuxtjs/vuetify'],
+        ['nuxt-validate', {
+            lang: 'ko'
+        }]
     ],
     vuetify: {
         // theme: { }
+        materialIcons: true,
+        css: true
     }
 }
