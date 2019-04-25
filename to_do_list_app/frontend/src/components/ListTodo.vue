@@ -28,10 +28,7 @@
 </template>
 
 <script>
-import { APIService } from '../APIService';
 import TodoTableRow from '@/components/TodoTableRow.vue'
-
-const apiService = new APIService();
 
 export default {
     name: 'ListTodo',

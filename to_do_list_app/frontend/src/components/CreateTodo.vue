@@ -27,7 +27,7 @@
                         color="primary"
                         class="btn btn-primary mx-3 mt-3"
                         v-if="!this.todo.id"
-                        @click="createTodo()"
+                        @click="createTodo"
                     >
                         추가하기
                     </v-btn>
@@ -65,12 +65,12 @@ export default {
         };
     },
     methods: {
-        createTodo() {
-            this.$validator.validate().then(valid => {
-                if(valid) {
-                    this.$emit('create', this.todo)
-                }
-            });
+        async createTodo() {
+            //http
+
+            if (await this.$validator.validate()) {
+                this.$emit('create', this.todo)
+            }
         },
         newTodo() {
             this.todo = {};

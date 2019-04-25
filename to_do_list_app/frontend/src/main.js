@@ -26,7 +26,7 @@ const store = new Vuex.Store({
         changeTodo: state => state.isTodoChanging = true,
         finishChangeTodo: state => state.isTodoChanging = false
     }
-})
+});
 
 new Vue({
     store,

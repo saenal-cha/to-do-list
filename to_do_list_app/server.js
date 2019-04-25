@@ -18,6 +18,9 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(cors());
 
+
+
+
 var port = process.env.PORT || 4000;
 
 app.listen(port, () => {
@@ -25,8 +28,9 @@ app.listen(port, () => {
 });
 
 
-
-
+app.get('/error', (req, res, next) => {
+    next(new Error('error test'))
+});
 
 // Creating Express Routes
 
@@ -35,14 +39,29 @@ var router = express.Router();
 
 app.use('/api', router);
 
-router.route('/create').post((req, res) => {
+// router.route('/create').post((req, res) => {
+//     var todo = new Todo(req.body);
+//     let todoResponse = null
+//     todo.save()
+//         .then( todo => {
+//         res.status(201).json({'message': 'Todo successfully added '});
+//     })
+//         .then()
+//         .then().catch( err => {
+//         res.status(400).send("Error when saving to database");
+//     });
+// });
+
+router.route('/create').post(async (req, res) => {
     var todo = new Todo(req.body);
-    todo.save().then( todo => {
-        res.status(201).json({'message': 'Todo successfully added '});
-    }).catch( err => {
-        res.status(400).send("Error when saving to database");
-    });
+    const todoResponse = await todo.save()
+        .catch(err => {
+            res.status(400).send("Error when saving to database");
+        })
+
+    res.json(todoResponse)
 });
+
 
 router.route('/todos').get((req, res) => {
     Todo.find((err, todos) => {
@@ -70,7 +89,7 @@ router.route('/todos/:id').put((req, res) => {
             todo.save().then( todo => {
                 res.json('Todo updated successfully');
             }).catch( err => {
-                res.statsu(400).send("Error when updating the todo");
+                res.status(400).send("Error when updating the todo");
             });
         }
     });
@@ -83,6 +102,16 @@ router.route('/todos/:id').delete((req, res) => {
     });
 });
 
+app.use((req, res, next) => {
+    console.log('---- page not found')
+    next(new Error('page not found'))
+})
+
+app.use((err, req, res, next) => {
+    console.error(err)
+
+    res.json({ content: 'error occurred' })
+})
 
 
 
