@@ -39,5 +39,11 @@ module.exports = {
     serverMiddleware: [
         // API middleware
         '~/api/index.js'
-    ]
+    ],
+    modules: [
+        '@nuxtjs/vuetify'
+    ],
+    vuetify: {
+        // theme: { }
+    }
 }
