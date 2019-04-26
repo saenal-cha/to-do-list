@@ -22,13 +22,4 @@
 </script>
 
 <style scoped>
-    .title
-    {
-        margin-top: 15px;
-        font-size: 5em;
-    }
-    .button
-    {
-        margin-top: 50px;
-    }
 </style>

@@ -66,8 +66,6 @@
             };
         },
         mounted() {
-
-            console.log(mapGetters)
         },
         computed: {
             ...mapGetters([
