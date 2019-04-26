@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <section class="container">
+        <section class="container mx-auto">
             <v-alert
                     :value="true"
                     v-show="showError"
@@ -13,23 +13,18 @@
                     @create="handleCreateTodo"
                     :refresh-todo="isTodoRefreshed"
             />
-            <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
-            <h1 class="title">
-                USERS
-            </h1>
-            <ul class="users">
-                <li v-for="(user, index) in users" :key="index" class="user">
-                    <nuxt-link :to="{ name: 'id', params: { id: index }}">
-                        {{ user.name }}
-                    </nuxt-link>
-                </li>
-            </ul>
+            <list-todo
+                    :todos="todos"
+                    @delete="handleDeleteTodo"
+                    @update-todo="handleUpdateTodo"
+            />
         </section>
     </v-app>
 </template>
 
 <script>
     import CreateTodo from '@/components/CreateTodo.vue'
+    import ListTodo from '@/components/ListTodo.vue'
     import { APIService } from '../api/APIService'
     import axios from '~/plugins/axios'
 
@@ -100,24 +95,10 @@
         },
         components: {
             CreateTodo,
-            // ListTodo,
+            ListTodo,
         }
     }
 </script>
 
 <style scoped>
-    .title
-    {
-        margin: 30px 0;
-    }
-    .users
-    {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    .user
-    {
-        margin: 10px 0;
-    }
 </style>
