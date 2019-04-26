@@ -26,14 +26,14 @@
     import CreateTodo from '@/components/CreateTodo.vue'
     import ListTodo from '@/components/ListTodo.vue'
     import { APIService } from '../api/APIService'
-    import axios from '~/plugins/axios'
 
     const apiService = new APIService();
 
     export default {
         async asyncData () {
-            let { data } = await axios.get('/api/users')
-            return { users: data }
+            let todoList = await apiService.getTodos();
+
+            return { todos: todoList }
         },
         head () {
             return {
@@ -49,7 +49,6 @@
             }
         },
         mounted () {
-            this.getTodos()
         },
         methods: {
             getTodos () {
