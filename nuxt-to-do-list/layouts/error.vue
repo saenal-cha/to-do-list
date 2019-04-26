@@ -1,37 +1,34 @@
 <template>
-  <section class="container">
-    <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
-    <h1 class="title">
-      {{ error.statusCode }}
-    </h1>
-    <h2 class="info">
-      {{ error.message }}
-    </h2>
-    <nuxt-link class="button" to="/" v-if="error.statusCode === 404">
-      Homepage
-    </nuxt-link>
-  </section>
+    <v-app>
+        <section class="container">
+            <div class="mt-3 mb-5">
+                <h1>페이지를 찾을 수 없습니다</h1>
+                <p class="text--disabled">({{ error.statusCode }} {{ error.message }})</p>
+            </div>
+            <v-btn
+                color="primary"
+                to="/"
+                v-if="error.statusCode === 404"
+            >
+                홈페이지로 가기
+            </v-btn>
+        </section>
+    </v-app>
 </template>
 <script>
-export default {
-  props: ['error']
-}
+    export default {
+        props: ['error']
+    }
 </script>
 
 <style scoped>
-.title
-{
-  margin-top: 15px;
-  font-size: 5em;
-}
-.info
-{
-  font-weight: 300;
-  color: #9aabb1;
-  margin: 0;
-}
-.button
-{
-  margin-top: 50px;
-}
+    .title
+    {
+        margin-top: 15px;
+        font-size: 5em;
+    }
+    .button
+    {
+        margin-top: 50px;
+    }
 </style>

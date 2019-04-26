@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <section class="container mx-auto">
+        <section class="container">
             <v-alert
                     :value="true"
                     v-show="showError"
