@@ -2,21 +2,21 @@
     <v-app>
         <section class="container">
             <v-alert
-                    :value="true"
-                    v-show="showError"
-                    type="error"
-                    dismissible
+                :value="true"
+                v-show="showError"
+                type="error"
+                dismissible
             >
                 오류가 발생했습니다
             </v-alert>
             <create-todo
-                    @create="handleCreateTodo"
-                    :refresh-todo="isTodoRefreshed"
+                @create="handleCreateTodo"
+                :refresh-todo="isTodoRefreshed"
             />
             <list-todo
-                    :todos="todos"
-                    @delete="handleDeleteTodo"
-                    @update-todo="handleUpdateTodo"
+                :todos="todos"
+                @delete="handleDeleteTodo"
+                @update-todo="handleUpdateTodo"
             />
         </section>
     </v-app>
@@ -37,7 +37,7 @@
         },
         head () {
             return {
-                title: 'Users'
+                title: '할 일 목록 만들기'
             }
         },
         data () {
