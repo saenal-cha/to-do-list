@@ -61,7 +61,7 @@
                 this.isTodoRefreshed = false;
 
                 apiService.createTodo(todo).then((result) => {
-                    if(result.status === 201) {
+                    if(result.status === 200) {
                         alert("할 일을 추가했습니다");
                         this.getTodos();
                         this.isTodoRefreshed = true;

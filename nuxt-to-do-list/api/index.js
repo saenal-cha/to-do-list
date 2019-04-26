@@ -4,7 +4,6 @@ const express = require('express')
 const app = express()
 
 // Require API routes
-const users = require('./routes/users')
 
 // Import API Routes
 app.use(users)
