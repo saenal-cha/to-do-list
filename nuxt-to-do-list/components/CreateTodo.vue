@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { APIService } from '../api/APIService'
+import { APIService } from '../libraries/APIService'
 
 const apiService = new APIService();
 

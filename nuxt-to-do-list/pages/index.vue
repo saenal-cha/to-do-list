@@ -25,7 +25,7 @@
 <script>
     import CreateTodo from '@/components/CreateTodo.vue'
     import ListTodo from '@/components/ListTodo.vue'
-    import { APIService } from '../api/APIService'
+    import { APIService } from '../libraries/APIService'
 
     const apiService = new APIService();
 
