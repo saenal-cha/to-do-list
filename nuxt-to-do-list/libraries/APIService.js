@@ -1,5 +1,5 @@
 import axios from 'axios';
-import conf from '@/conf/application.conf.json'
+import conf from '../conf/application.conf.json'
 
 const API_URL = conf.api.url;
 

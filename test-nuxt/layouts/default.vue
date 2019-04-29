@@ -6,7 +6,7 @@
     export default {
         name: 'default',
         metaInfo: {
-            title: 'nuxt test default - hello world!',
+            title: 'nuxt __tests__ default - hello world!',
             titleTemplate: '%s | My awesome webapp'
         }
     }

@@ -29,7 +29,7 @@ app.listen(port, () => {
 
 
 app.get('/error', (req, res, next) => {
-    next(new Error('error test'))
+    next(new Error('error __tests__'))
 });
 
 // Creating Express Routes

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="2" failures="2" time="1.591">
+  <testsuite name="CreateTodo" errors="0" failures="2" skipped="0" timestamp="2019-04-29T09:21:22" time="1.127" tests="2">
+    <testcase classname="CreateTodo renders the correct markup" name="CreateTodo renders the correct markup" time="0.004">
+      <failure>Error: expect(string).toContain(value)
+
+Expected string:
+  &quot;&lt;div id=\&quot;container\&quot; class=\&quot;container pb-5\&quot;&gt;&lt;div class=\&quot;row\&quot;&gt;&lt;div class=\&quot;col-sm-8 offset-md-2\&quot;&gt;&lt;h1&gt;할 일 목록 만들기&lt;/h1&gt; &lt;div class=\&quot;info-form\&quot;&gt;&lt;v-form-stub&gt;&lt;v-text-field-stub label=\&quot;할 일\&quot; name=\&quot;todo_name\&quot; error-messages=\&quot;\&quot; required=\&quot;\&quot;&gt;&lt;/v-text-field-stub&gt; &lt;small&gt;
+                        할 일을 적고 [엔터] 키를 누르거나 [추가하기] 버튼을 누르세요
+                    &lt;/small&gt;&lt;/v-form-stub&gt; &lt;v-btn-stub color=\&quot;primary\&quot; activeclass=\&quot;v-btn--active\&quot; tag=\&quot;button\&quot; type=\&quot;button\&quot; class=\&quot;btn btn-primary mx-3 mt-3\&quot;&gt;
+                    추가하기
+                &lt;/v-btn-stub&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&quot;
+To contain value:
+  &quot;&lt;div class=\&quot;info-form\&quot;&gt;&lt;/div&gt;&quot;
+    at Object.it (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/__tests__/components/CreateTodo.spec.js:29:28)
+    at Object.asyncFn (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)
+    at resolve (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:46:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:34:499)
+    at promise.then (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:74:39)
+    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
+    </testcase>
+    <testcase classname="CreateTodo has a button" name="CreateTodo has a button" time="0.003">
+      <failure>Error: expect(received).toBe(expected)
+
+Expected value to be (using ===):
+  true
+Received:
+  false
+    at Object.it (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/__tests__/components/CreateTodo.spec.js:32:40)
+    at Object.asyncFn (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)
+    at resolve (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:46:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:34:499)
+    at promise.then (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:74:39)
+    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -75,13 +75,6 @@ export default {
         newTodo() {
             this.todo = {};
         }
-    },
-    mounted() {
-        if(this.$route.params.pk) {
-            apiService.getTodo(this.$route.params.pk).then((todo) => {
-                this.todo = todo;
-            })
-        }
     }
 }
 </script>
