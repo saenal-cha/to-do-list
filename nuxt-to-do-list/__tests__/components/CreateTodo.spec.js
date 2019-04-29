@@ -14,18 +14,31 @@ const validateStub = sinon.stub();
 localVue.use(VeeValidate);
 localVue.use(Vuetify);
 
-
+let wrapper = null;
 
 describe('CreateTodo', () => {
-    const wrapper = shallowMount(CreateTodo, {
-        localVue
+    beforeEach(() => {
+        wrapper = shallowMount(CreateTodo, {
+            localVue
+        });
+    });
+    it('has a h1', () => {
+        expect(wrapper.contains('h1')).toBe(true);
     });
 
-    it('renders the correct markup', () => {
-        expect(wrapper.html()).toContain('<div class="info-form"></div>')
+    it('has a input', async () => {
+        await wrapper.vm.$validator.validateAll();
+        console.log('==============', wrapper.vm.$validator.validateAll);
+        console.log(wrapper.vm.todo.name)
+        console.log(wrapper.vm.errors.first('todo_name'))
     });
 
     it('has a button', () => {
         expect(wrapper.contains('button')).toBe(true);
     });
+
+    it('validate empty string in the input', () => {
+        wrapper.find('button').trigger('click');
+        expect(wrapper.contains('.v-messages__message')).toBe(true);
+    })
 });
