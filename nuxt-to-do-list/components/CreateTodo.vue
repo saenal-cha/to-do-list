@@ -13,7 +13,7 @@
                             name="todo_name"
                             @keyup.enter="createTodo"
                             v-validate="'required'"
-                            :error-messages="errors.collect('todo_name')"
+                            :error-messages="errors ? errors.collect('todo_name') : ''"
                             required
                         >
                         </v-text-field>
@@ -55,8 +55,6 @@ export default {
                 this.newTodo();
             }
         }
-    },
-    computed: {
     },
     data() {
         return {

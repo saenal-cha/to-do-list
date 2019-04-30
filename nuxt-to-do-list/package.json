@@ -21,6 +21,7 @@
     "chai": "^4.2.0",
     "core-js": "^2.6.5",
     "express": "^4.16.4",
+    "flush-promises": "^1.0.2",
     "jest-junit": "^6.3.0",
     "jest-vue-preprocessor": "^1.5.0",
     "nuxt": "latest",

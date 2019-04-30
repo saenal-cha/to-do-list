@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="4" failures="2" time="1.628">
-  <testsuite name="CreateTodo" errors="0" failures="2" skipped="0" timestamp="2019-04-29T10:32:14" time="1.16" tests="4">
-    <testcase classname="CreateTodo has a h1" name="CreateTodo has a h1" time="0.017">
+<testsuites name="jest tests" tests="5" failures="2" time="1.639">
+  <testsuite name="CreateTodo" errors="0" failures="2" skipped="0" timestamp="2019-04-30T07:15:40" time="1.14" tests="5">
+    <testcase classname="CreateTodo has a h1" name="CreateTodo has a h1" time="0.022">
     </testcase>
-    <testcase classname="CreateTodo has a input" name="CreateTodo has a input" time="0.013">
+    <testcase classname="CreateTodo test" name="CreateTodo test" time="0.011">
     </testcase>
-    <testcase classname="CreateTodo has a button" name="CreateTodo has a button" time="0.005">
+    <testcase classname="CreateTodo validate empty input" name="CreateTodo validate empty input" time="0.004">
+    </testcase>
+    <testcase classname="CreateTodo has a button" name="CreateTodo has a button" time="0.006">
       <failure>Error: expect(received).toBe(expected)
 
 Expected value to be (using ===):
   true
 Received:
   false
-    at Object.it (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/__tests__/components/CreateTodo.spec.js:41:40)
+    at Object.it (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/__tests__/components/CreateTodo.spec.js:73:40)
     at Object.asyncFn (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)
     at resolve (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:46:12)
     at new Promise (&lt;anonymous&gt;)
@@ -20,11 +22,11 @@ Received:
     at promise.then (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:74:39)
     at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
     </testcase>
-    <testcase classname="CreateTodo validate empty string in the input" name="CreateTodo validate empty string in the input" time="0.003">
+    <testcase classname="CreateTodo validate empty string in the input" name="CreateTodo validate empty string in the input" time="0.005">
       <failure>Error: [vue-test-utils]: find did not return button, cannot call trigger() on empty Wrapper
     at throwError (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/@vue/test-utils/dist/vue-test-utils.js:1417:9)
     at ErrorWrapper.trigger (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/@vue/test-utils/dist/vue-test-utils.js:2264:3)
-    at Object.it (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/__tests__/components/CreateTodo.spec.js:44:28)
+    at Object.it (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/__tests__/components/CreateTodo.spec.js:76:28)
     at Object.asyncFn (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)
     at resolve (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:46:12)
     at new Promise (&lt;anonymous&gt;)
