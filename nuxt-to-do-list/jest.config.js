@@ -1,4 +1,4 @@
-console.log('----jest config-----')
+console.log('---------------------jest config-----------------------------')
 
 module.exports = {
     'rootDir': './',

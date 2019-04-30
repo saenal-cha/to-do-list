@@ -11,6 +11,7 @@
                             v-model="todo.name"
                             label="할 일"
                             name="todo_name"
+                            data-vv-name="todo_name"
                             @keyup.enter="createTodo"
                             v-validate="'required'"
                             :error-messages="errors ? errors.collect('todo_name') : ''"
@@ -24,6 +25,7 @@
                         </small>
                     </v-form>
                     <v-btn
+                        id="button-create-todo"
                         color="primary"
                         class="btn btn-primary mx-3 mt-3"
                         v-if="!this.todo.id"
@@ -61,6 +63,8 @@ export default {
             showError: false,
             todo: {}
         };
+    },
+    mounted() {
     },
     methods: {
         async createTodo() {
