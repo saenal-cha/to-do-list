@@ -61,14 +61,11 @@ describe('CreateTodo', () => {
         const vButton = wrapper.find('#button-create-todo');
 
         textField.element.value = 'tom';
+        wrapper.setData({ todo: 'to study vue'});
 
-        console.log('---emitting test---');
         vButton.trigger('click');
-        console.log('----button is clicked!!');
 
         await flushPromises();
-
-        console.log('event emitted:   ', wrapper.emitted());
 
         expect(wrapper.emitted().create).toBeTruthy();
     });

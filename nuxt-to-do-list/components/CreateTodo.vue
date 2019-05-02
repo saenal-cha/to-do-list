@@ -66,14 +66,11 @@ export default {
         };
     },
     mounted() {
-        console.log('component is mounted !!')
     },
     methods: {
         async createTodo() {
             //http
-            console.log('!!createTodo is called!!')
             if (await this.$validator.validate()) {
-                console.log('----validated---');
                 this.$emit('create', this.todo);
             }
         },

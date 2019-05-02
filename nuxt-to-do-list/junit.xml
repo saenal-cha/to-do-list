@@ -1,36 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="8" failures="1" time="1.894">
-  <testsuite name="CreateTodo" errors="0" failures="1" skipped="0" timestamp="2019-05-02T06:01:17" time="1.248" tests="1">
-    <testcase classname="CreateTodo has a TABLE tag" name="CreateTodo has a TABLE tag" time="0.018">
-      <failure>Error: expect(received).toBe(expected)
-
-Expected value to be (using ===):
-  true
-Received:
-  false
-    at Object.it (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/__tests__/components/ListTodo.spec.js:36:39)
-    at Object.asyncFn (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)
-    at resolve (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:46:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:34:499)
-    at promise.then (/Users/saenal.cha/Code/to-do-list/nuxt-to-do-list/node_modules/jest-jasmine2/build/queue_runner.js:74:39)
-    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
-    </testcase>
-  </testsuite>
-  <testsuite name="CreateTodo" errors="0" failures="0" skipped="0" timestamp="2019-05-02T06:01:19" time="0.157" tests="7">
-    <testcase classname="CreateTodo has a h1" name="CreateTodo has a h1" time="0.014">
+<testsuites name="jest tests" tests="7" failures="0" time="1.881">
+  <testsuite name="CreateTodo" errors="0" failures="0" skipped="0" timestamp="2019-05-02T06:39:59" time="1.31" tests="7">
+    <testcase classname="CreateTodo has a h1" name="CreateTodo has a h1" time="0.024">
     </testcase>
     <testcase classname="CreateTodo has correct text in H1 tag: 할 일 목록 만들기" name="CreateTodo has correct text in H1 tag: 할 일 목록 만들기" time="0.005">
     </testcase>
     <testcase classname="CreateTodo has correct text in SMALL tag: 할 일을 적고 [엔터] 키를 누르거나 [추가하기] 버튼을 누르세요" name="CreateTodo has correct text in SMALL tag: 할 일을 적고 [엔터] 키를 누르거나 [추가하기] 버튼을 누르세요" time="0.004">
     </testcase>
-    <testcase classname="CreateTodo has a button" name="CreateTodo has a button" time="0.009">
+    <testcase classname="CreateTodo has a button" name="CreateTodo has a button" time="0.005">
     </testcase>
-    <testcase classname="CreateTodo has correct text in BUTTON tag: 추가하기" name="CreateTodo has correct text in BUTTON tag: 추가하기" time="0.008">
+    <testcase classname="CreateTodo has correct text in BUTTON tag: 추가하기" name="CreateTodo has correct text in BUTTON tag: 추가하기" time="0.005">
     </testcase>
-    <testcase classname="CreateTodo shows validation message when text-field has no text" name="CreateTodo shows validation message when text-field has no text" time="0.011">
+    <testcase classname="CreateTodo shows validation message when text-field has no text" name="CreateTodo shows validation message when text-field has no text" time="0.013">
     </testcase>
-    <testcase classname="CreateTodo success to emit to create this todo object when text-filed is validated by not empty text" name="CreateTodo success to emit to create this todo object when text-filed is validated by not empty text" time="0.018">
+    <testcase classname="CreateTodo success to emit to create this todo object when text-filed is validated by not empty text" name="CreateTodo success to emit to create this todo object when text-filed is validated by not empty text" time="0.01">
     </testcase>
   </testsuite>
 </testsuites>

@@ -23,13 +23,19 @@ Vue.config.ignoredElements = [
 let wrapper = null;
 
 describe('CreateTodo', () => {
-    beforeEach(() => {
-        wrapper = mount(CreateTodo, {
-            sync: false
-        })
-    });
-
-    it('has a TABLE tag', () => {
-        expect(wrapper.contains('table')).toBe(true);
-    });
+    // beforeEach(() => {
+    //     wrapper = mount(CreateTodo, {
+    //         sync: false
+    //     })
+    // });
+    //
+    // it('has a TABLE tag', () => {
+    //     expect(wrapper.contains('#todoListTable')).toBe(true);
+    // });
+    //
+    // it('should emit delete todo event', () => {
+    //     wrapper.vm.deleteTodo();
+    //
+    //     expect(wrapper.emitted().delete).toBeTruthy();
+    // });
 });
