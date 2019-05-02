@@ -1,7 +1,7 @@
 import Vue from "vue";
 import { createLocalVue, shallowMount, mount } from "@vue/test-utils";
 import flushPromises from 'flush-promises';
-import CreateTodo from '../../components/ListTodo.vue';
+import ListTodo from '../../components/ListTodo.vue';
 import VeeValidate from "vee-validate";
 import Vuetify from "vuetify";
 import sinon from 'sinon'
@@ -24,7 +24,7 @@ let wrapper = null;
 
 describe('CreateTodo', () => {
     beforeEach(() => {
-        wrapper = mount(CreateTodo, {
+        wrapper = mount(ListTodo, {
             sync: false
         })
     });

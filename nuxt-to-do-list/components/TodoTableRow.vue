@@ -1,12 +1,12 @@
 <template>
-    <tr>
+    <tr class="todo-table-row-item">
         <td class="text-sm-left">{{ this.index + 1 }}</td>
         <td
             @click="onClickTodoName"
-            class="text-sm-left cursor-pointer"
+            class="text-sm-left cursor-pointer todo-table-row-datum-name"
         >
             <v-text-field
-                class=""
+                class="todo-name-edit-input"
                 v-model="newName"
                 :autofocus=true
                 v-if="isChangingName === true"
@@ -30,7 +30,7 @@
             </v-btn>
             <v-btn
                 color="normal"
-                class="mx-3"
+                class="mx-3 button-cancel-update-todo"
                 @click="onClickCancelUpdateTodo"
                 v-if="isChangingName === true"
             >
@@ -38,7 +38,7 @@
             </v-btn>
             <v-btn
                 color="error"
-                class="mx-3"
+                class="mx-3 delete-button"
                 v-if="isChangingName === false"
                 @click="onClickDeleteTodo"
             >
@@ -87,15 +87,18 @@
                 this.$emit('click-update-todo', this.todo, this.newName);
             },
             onClickCancelUpdateTodo() {
+                console.log('on click cancel update todo');
                 this.$store.commit('finishChangeTodo');
                 this.newName = this.todo.name;
             },
             onClickTodoName() {
+                console.log('on click todo name');
                 if(this.$store.state.isTodoChanging === true) {
                     return
                 }
 
                 this.isChangingName = true;
+                console.log('commit!!')
                 this.$store.commit('changeTodo');
             }
         },

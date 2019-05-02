@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="10" failures="0" time="1.765">
-  <testsuite name="CreateTodo" errors="0" failures="0" skipped="0" timestamp="2019-05-02T06:44:30" time="1.137" tests="3">
-    <testcase classname="CreateTodo has a TABLE tag" name="CreateTodo has a TABLE tag" time="0.015">
+<testsuites name="jest tests" tests="16" failures="0" time="2.152">
+  <testsuite name="TodoTableRow" errors="0" failures="0" skipped="0" timestamp="2019-05-02T10:21:23" time="1.421" tests="6">
+    <testcase classname="TodoTableRow should show to do list item name" name="TodoTableRow should show to do list item name" time="0.042">
     </testcase>
-    <testcase classname="CreateTodo should emit delete todo event" name="CreateTodo should emit delete todo event" time="0.002">
+    <testcase classname="TodoTableRow should emit click delete todo event" name="TodoTableRow should emit click delete todo event" time="0.008">
     </testcase>
-    <testcase classname="CreateTodo should emit update todo event" name="CreateTodo should emit update todo event" time="0.003">
+    <testcase classname="TodoTableRow should emit click update to do event" name="TodoTableRow should emit click update to do event" time="0.007">
+    </testcase>
+    <testcase classname="TodoTableRow should erase to do list item name when td is clicked to input for changing text" name="TodoTableRow should erase to do list item name when td is clicked to input for changing text" time="0.027">
+    </testcase>
+    <testcase classname="TodoTableRow should show same name when td is clicked and text field is shown" name="TodoTableRow should show same name when td is clicked and text field is shown" time="0.026">
+    </testcase>
+    <testcase classname="TodoTableRow should commit finishChangeTodo event to the store when click cancel update to do" name="TodoTableRow should commit finishChangeTodo event to the store when click cancel update to do" time="0.03">
     </testcase>
   </testsuite>
-  <testsuite name="CreateTodo" errors="0" failures="0" skipped="0" timestamp="2019-05-02T06:44:32" time="0.135" tests="7">
-    <testcase classname="CreateTodo has a h1" name="CreateTodo has a h1" time="0.017">
+  <testsuite name="CreateTodo" errors="0" failures="0" skipped="0" timestamp="2019-05-02T10:21:24" time="0.143" tests="7">
+    <testcase classname="CreateTodo has a h1" name="CreateTodo has a h1" time="0.011">
     </testcase>
-    <testcase classname="CreateTodo has correct text in H1 tag: 할 일 목록 만들기" name="CreateTodo has correct text in H1 tag: 할 일 목록 만들기" time="0.005">
+    <testcase classname="CreateTodo has correct text in H1 tag: 할 일 목록 만들기" name="CreateTodo has correct text in H1 tag: 할 일 목록 만들기" time="0.004">
     </testcase>
     <testcase classname="CreateTodo has correct text in SMALL tag: 할 일을 적고 [엔터] 키를 누르거나 [추가하기] 버튼을 누르세요" name="CreateTodo has correct text in SMALL tag: 할 일을 적고 [엔터] 키를 누르거나 [추가하기] 버튼을 누르세요" time="0.004">
     </testcase>
     <testcase classname="CreateTodo has a button" name="CreateTodo has a button" time="0.004">
     </testcase>
-    <testcase classname="CreateTodo has correct text in BUTTON tag: 추가하기" name="CreateTodo has correct text in BUTTON tag: 추가하기" time="0.006">
+    <testcase classname="CreateTodo has correct text in BUTTON tag: 추가하기" name="CreateTodo has correct text in BUTTON tag: 추가하기" time="0.009">
     </testcase>
     <testcase classname="CreateTodo shows validation message when text-field has no text" name="CreateTodo shows validation message when text-field has no text" time="0.008">
     </testcase>
-    <testcase classname="CreateTodo success to emit to create this todo object when text-filed is validated by not empty text" name="CreateTodo success to emit to create this todo object when text-filed is validated by not empty text" time="0.011">
+    <testcase classname="CreateTodo success to emit to create this todo object when text-filed is validated by not empty text" name="CreateTodo success to emit to create this todo object when text-filed is validated by not empty text" time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="CreateTodo" errors="0" failures="0" skipped="0" timestamp="2019-05-02T10:21:25" time="0.081" tests="3">
+    <testcase classname="CreateTodo has a TABLE tag" name="CreateTodo has a TABLE tag" time="0.005">
+    </testcase>
+    <testcase classname="CreateTodo should emit delete todo event" name="CreateTodo should emit delete todo event" time="0.002">
+    </testcase>
+    <testcase classname="CreateTodo should emit update todo event" name="CreateTodo should emit update todo event" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>
