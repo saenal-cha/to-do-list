@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import TodoTableRow from '@/components/TodoTableRow.vue'
+import TodoTableRow from '../components/TodoTableRow.vue'
 
 export default {
     name: 'ListTodo',
@@ -37,15 +37,15 @@ export default {
     },
     data() {
         return {
-            numberOfTodos: this.todos.length,
+            numberOfTodos: this.todos ? this.todos.length : '',
             newName: '',
         };
     },
     props: {
-      todos: {
-          type: Array,
-          required: true,
-      }
+          todos: {
+              type: Array,
+              required: true,
+          }
     },
     methods: {
         deleteTodo(todo) {

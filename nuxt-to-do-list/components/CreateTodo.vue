@@ -8,6 +8,7 @@
                         v-on:submit.prevent
                     >
                         <v-text-field
+                            id="input-create-todo"
                             v-model="todo.name"
                             label="할 일"
                             name="todo_name"
@@ -65,13 +66,15 @@ export default {
         };
     },
     mounted() {
+        console.log('component is mounted !!')
     },
     methods: {
         async createTodo() {
             //http
-
+            console.log('!!createTodo is called!!')
             if (await this.$validator.validate()) {
-                this.$emit('create', this.todo)
+                console.log('----validated---');
+                this.$emit('create', this.todo);
             }
         },
         newTodo() {

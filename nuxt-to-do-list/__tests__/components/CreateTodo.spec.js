@@ -30,6 +30,25 @@ describe('CreateTodo', () => {
         expect(wrapper.contains('h1')).toBe(true);
     });
 
+    it('has correct text in H1 tag: 할 일 목록 만들기', () => {
+        const h1 = wrapper.find('h1');
+        expect(h1.text()).toBe('할 일 목록 만들기');
+    });
+
+    it('has correct text in SMALL tag: 할 일을 적고 [엔터] 키를 누르거나 [추가하기] 버튼을 누르세요', () => {
+        const small = wrapper.find('small');
+        expect(small.text()).toBe('할 일을 적고 [엔터] 키를 누르거나 [추가하기] 버튼을 누르세요');
+    });
+
+    it('has a button', () => {
+        expect(wrapper.contains('#button-create-todo')).toBe(true);
+    });
+
+    it('has correct text in BUTTON tag: 추가하기', () => {
+        const button = wrapper.find('.btn');
+        expect(button.text()).toBe('추가하기');
+    });
+
     it('shows validation message when text-field has no text', async () => {
         const validation = await wrapper.vm.$validator.validate();
         const validationMessage = await wrapper.vm.errors.first('todo_name');
@@ -37,44 +56,20 @@ describe('CreateTodo', () => {
         expect(validationMessage).toBe('The todo_name field is required.');
     });
 
-    it('success to create to do list item', async () => {
-        console.log(wrapper.vm.createTodo.callCount);
-        console.log(wrapper.vm.$validator.validate.callCount);
-        sinon.spy(wrapper.vm, 'createTodo');
-        sinon.spy(wrapper.vm.$validator, 'validate');
+    it('success to emit to create this todo object when text-filed is validated by not empty text', async () => {
+        const textField = wrapper.find('#input-create-todo');
         const vButton = wrapper.find('#button-create-todo');
-        console.log('------button: ');
 
+        textField.element.value = 'tom';
+
+        console.log('---emitting test---');
         vButton.trigger('click');
-        console.log(wrapper.vm.createTodo.callCount);
-        console.log('----1-----')
-        console.log(wrapper.vm.$validator.validate.callCount);
-        console.log('+_+_+_+_+_')
-        console.log(wrapper.vm.createTodo);
+        console.log('----button is clicked!!');
 
-        // expect(wrapper.vm.createTodo).toBeCalled();
-        // expect(wrapper.vm.$validator.validate).toBeCalled();
+        await flushPromises();
 
-        // wrapper.vm.todo.name = 'test-name';
-        // await flushPromises();
-        wrapper.vm.$nextTick(() => {
-            // wrapper.vm.$validator.validate().then(valid => {
-            //     console.log('-----******----TEST CODE------******------')
-            //     console.log('-----******----TEST CODE------******------')
-            //     console.log('param: ', valid);
-            //     console.log('todo.name errors first:   ', wrapper.vm.errors.first('todo_name'));
-            //     console.log('errors.any():    ', wrapper.vm.errors.any());
-            // });
-        })
+        console.log('event emitted:   ', wrapper.emitted());
+
+        expect(wrapper.emitted().create).toBeTruthy();
     });
-
-    it('has a button', () => {
-        expect(wrapper.contains('#button-create-todo')).toBe(true);
-    });
-
-    it('validate empty string in the input', () => {
-        wrapper.find('#button-create-todo').trigger('click');
-        const message = wrapper.find('.v-messages__message');
-        expect(message).toBe(true);
-    })
 });
