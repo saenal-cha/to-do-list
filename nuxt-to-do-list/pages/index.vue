@@ -2,6 +2,7 @@
     <v-app>
         <section class="container">
             <v-alert
+                id="v-alert-component"
                 :value="true"
                 v-show="showError"
                 type="error"
@@ -56,6 +57,7 @@
             getTodos () {
                 console.log('--before apiService--');
                 console.log(apiService);
+                console.log('getTodos():::', apiService.getTodos());
                 apiService.getTodos().then((data) => {
                     console.log('---then--')
                     this.todos = data;

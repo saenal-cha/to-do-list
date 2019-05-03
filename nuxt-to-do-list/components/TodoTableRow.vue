@@ -51,7 +51,6 @@
 <script>
     import { mapGetters } from 'vuex';
 
-
     export default {
         name: 'TodoTableRow',
         components: {},
@@ -87,18 +86,15 @@
                 this.$emit('click-update-todo', this.todo, this.newName);
             },
             onClickCancelUpdateTodo() {
-                console.log('on click cancel update todo');
                 this.$store.commit('finishChangeTodo');
                 this.newName = this.todo.name;
             },
             onClickTodoName() {
-                console.log('on click todo name');
                 if(this.$store.state.isTodoChanging === true) {
                     return
                 }
 
                 this.isChangingName = true;
-                console.log('--before commit changeTodo!!--')
                 this.$store.commit('changeTodo');
             }
         },

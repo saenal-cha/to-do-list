@@ -1,5 +1,5 @@
 <template>
-    <div id="container" class="container pb-5">
+    <div id="create-to-do-component" class="container pb-5">
         <div class="row">
             <div class="col-sm-8 offset-md-2">
                 <h1>할 일 목록 만들기</h1>

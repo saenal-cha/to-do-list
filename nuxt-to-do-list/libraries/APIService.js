@@ -12,6 +12,8 @@ export class APIService {
     getTodos() {
         console.log('---apiService.js -- getTodos() ---')
         const url = `${API_URL}/api/todos`;
+        console.log('url::::::', url);
+        console.log('customAxios:   ', customAxios);
         return customAxios.get(url).then(response => response.data);
     }
     getTodo(pk) {

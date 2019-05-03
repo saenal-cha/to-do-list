@@ -8,10 +8,6 @@ import VeeValidate from "vee-validate";
 import Vuetify from "vuetify";
 import sinon from 'sinon'
 
-console.log('---start test todo table row---')
-const actionInjector = require('./inject-loader!./actions');
-console.log('actionInjector: ', actionInjector);
-
 const localVue = createLocalVue();
 localVue.use(VeeValidate);
 localVue.use(Vuetify);
@@ -35,7 +31,6 @@ describe('TodoTableRow', () => {
     let state;
     let getters;
     let store;
-
     beforeEach(() => {
         state = {
             isTodoChanging: false
@@ -99,30 +94,5 @@ describe('TodoTableRow', () => {
         await flushPromises();
 
         expect(wrapper.find('input').element.value).toBe(wrapper.vm.todo.name);
-    })
-
-    it('should commit finishChangeTodo event to the store when click cancel update to do', async () => {
-        const tdTodoName = wrapper.find('.todo-table-row-datum-name');
-        console.log('---state:   ', store.state.isTodoChanging);
-        tdTodoName.trigger('click');
-        await flushPromises();
-        console.log('---state:   ', store.state.isTodoChanging);
-
-        const buttonCancelUpdateTodo = wrapper.find('.button-cancel-update-todo');
-        buttonCancelUpdateTodo.trigger('click');
-        await flushPromises();
-
-        // wrapper.vm.onClickCancelUpdateTodo();
-        console.log('----state:    ', store.state.isTodoChanging);
-        expect(store.state.isTodoChanging).toBe(false);
-
-        // expect(wrapper.emitted('finishChangeTodo')).toBeTruthy();
-    })
-
-
-    //
-    // it('should emit update todo event', () => {
-    //     wrapper.vm.updateTodo();
-    //     expect(wrapper.emitted('update-todo')).toBeTruthy();
-    // });
+    });
 });

@@ -23,5 +23,5 @@ test('change "isTodoChanging" value when "finishChangeTodo" is commited', () => 
     expect(store.state.isTodoChanging).toBe(true);
 
     store.commit('finishChangeTodo');
-    expect(store.state.isTodoChanging).toBe(false)
+    expect(store.state.isTodoChanging).toBe(false);
 });
