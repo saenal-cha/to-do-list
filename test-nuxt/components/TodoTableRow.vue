@@ -57,7 +57,7 @@
         components: {},
         props: [
             'todo',
-            'index',
+            'index.vue',
         ],
         data() {
             return {

@@ -23,13 +23,14 @@
 </template>
 
 <script>
-    import CreateTodo from '@/components/CreateTodo.vue'
-    import ListTodo from '@/components/ListTodo.vue'
+    import CreateTodo from '../components/CreateTodo.vue'
+    import ListTodo from '../components/ListTodo.vue'
     import { APIService } from '../libraries/APIService'
 
     const apiService = new APIService();
 
     export default {
+        name: 'index',
         async asyncData () {
             let todoList = await apiService.getTodos();
 
@@ -53,7 +54,10 @@
         },
         methods: {
             getTodos () {
+                console.log('--before apiService--');
+                console.log(apiService);
                 apiService.getTodos().then((data) => {
+                    console.log('---then--')
                     this.todos = data;
                 });
             },

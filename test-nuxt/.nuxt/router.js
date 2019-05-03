@@ -86,7 +86,7 @@ export function createRouter() {
     }, {
       path: "/",
       component: _52a60330,
-      name: "index"
+      name: "index.vue"
     }],
 
     fallback: false

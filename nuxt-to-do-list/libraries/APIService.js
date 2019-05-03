@@ -10,6 +10,7 @@ axios.defaults.timeout = 1000;
 
 export class APIService {
     getTodos() {
+        console.log('---apiService.js -- getTodos() ---')
         const url = `${API_URL}/api/todos`;
         return customAxios.get(url).then(response => response.data);
     }

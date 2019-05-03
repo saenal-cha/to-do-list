@@ -17,7 +17,7 @@
                 <template v-slot:items="props">
                     <todo-table-row
                         :todo="props.item"
-                        :index="props.index"
+                        :index="props.Index"
                         @click-delete-todo="deleteTodo"
                         @click-update-todo="updateTodo"
                     />

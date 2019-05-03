@@ -8,6 +8,10 @@ import VeeValidate from "vee-validate";
 import Vuetify from "vuetify";
 import sinon from 'sinon'
 
+console.log('---start test todo table row---')
+const actionInjector = require('./inject-loader!./actions');
+console.log('actionInjector: ', actionInjector);
+
 const localVue = createLocalVue();
 localVue.use(VeeValidate);
 localVue.use(Vuetify);

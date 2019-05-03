@@ -1,17 +1,17 @@
 import Vuex from 'vuex';
+// import mutations from './mutations';
+// import getters from './getters';
+import storeConfig from './store-config'
 
 const store = () => new Vuex.Store({
     state: {
-        isTodoChanging: false
+        ...storeConfig.state
     },
     getters: {
-        stateOfTodoChanging(state) {
-            return state.isTodoChanging;
-        }
+        ...storeConfig.getters
     },
     mutations: {
-        changeTodo: state => state.isTodoChanging = true,
-        finishChangeTodo: state => state.isTodoChanging = false
+        ...storeConfig.mutations
     }
 });
 

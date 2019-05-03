@@ -98,7 +98,7 @@
                 }
 
                 this.isChangingName = true;
-                console.log('commit!!')
+                console.log('--before commit changeTodo!!--')
                 this.$store.commit('changeTodo');
             }
         },
